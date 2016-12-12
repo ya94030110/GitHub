@@ -4,8 +4,9 @@ public class Login
 {
 	public Login()
 	{
-		
+				
 	}
+
 	public void work(DataOutputStream output, String ID, String Password)
 	{
 		try
