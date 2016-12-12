@@ -22,6 +22,10 @@ public class Finish
 	        output.writeUTF("\r");
 	        output.flush();
 	        TimeUnit.SECONDS.sleep(1);
+			s+=(char)3;
+	        output.writeUTF(s);
+	        output.flush();
+	        s="";
 		}
 		catch(Exception e)
 		{

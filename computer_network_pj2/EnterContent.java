@@ -10,9 +10,9 @@ public class EnterContent
 	{
 		try
 		{
-			output.writeUTF(Content);
-	        output.flush();
-	        TimeUnit.SECONDS.sleep(1);
+				output.writeUTF(Content + "\r");
+				output.flush();
+		        TimeUnit.SECONDS.sleep(1);
 		}
 		catch(Exception e)
 		{

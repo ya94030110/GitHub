@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.concurrent.TimeUnit;
 import java.net.*;
-public class PTTPoster
+public class project2
 {
     public static void main( String[] args ) throws IOException
     {
@@ -12,7 +12,7 @@ public class PTTPoster
         {
             DataInputStream input = null;
             DataOutputStream output = null;
-            BufferedReader br = new BufferedReader(new FileReader("input.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("P_input.txt"));
             Login login = new Login();
             EnterBoard enterboard = new EnterBoard();
             SetTitle settitle = new SetTitle();
@@ -50,7 +50,7 @@ public class PTTPoster
             				}
             				CloseTag += ">";
             				OpenTag = 1;
-            				System.out.println("Tag: " + Tag);
+            				//System.out.println("Tag: " + Tag);
             				if(Tag.equals("EXIT"))
             				{
             					input.close();
@@ -68,7 +68,7 @@ public class PTTPoster
             					int n = CloseTag.length();
             					if(CloseTag.equals(in.substring(i, i+n)))
             					{
-            						if(!Tag.equals("CONTENT")) System.out.println("content: " + tmp);
+            						//if(!Tag.equals("CONTENT")) System.out.println("content: " + tmp);
             						OpenTag = 0;
             						if(Tag.equals("BOARD")) enterboard.work(output, tmp);
             						if(Tag.equals("P")) settitle.work(output, tmp);
@@ -97,12 +97,15 @@ public class PTTPoster
             				}
             				else
             				{
+            					
             					tmp += in.charAt(i);
+            					
             				}
             			}
             		}
             		if(OpenTag == 1)
             		{
+            			//System.out.println("content: " + tmp);
             			entercontent.work(output, tmp);
             		}
             	}
